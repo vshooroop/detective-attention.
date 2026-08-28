@@ -1,0 +1,134 @@
+<!doctype html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<meta name="theme-color" content="#090604">
+<title>Дело №41-А — Внимание</title>
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+<audio id="music" src="assets/music.mp3" loop preload="auto" autoplay></audio>
+<audio id="tick" src="assets/tick.wav" loop preload="auto" autoplay></audio>
+
+<main>
+<section class="screen hero" id="top">
+  <div class="screen-bg"></div>
+  <div class="screen-shade"></div>
+  <div class="hero-content">
+    <div class="tag">ДЕЛО №41-А</div>
+    <div class="eyebrow">• ФИНАЛ РАССЛЕДОВАНИЯ •</div>
+    <h1>ДЕЛО<br>РАСКРЫТО</h1>
+    <div class="divider">◆ ───── ◆</div>
+    <p class="lead">Вы нашли правильный ответ.</p>
+    <button id="secret" class="secret" type="button" aria-expanded="false">
+      <span class="secret-closed">С Е К Р Е Т Н О</span>
+      <span class="secret-open">В Н И М А Н И Е</span>
+    </button>
+    <button id="toCases" class="primary" type="button">ОТКРЫТЬ МАТЕРИАЛЫ ДЕЛА</button>
+    <div class="scroll-note">⌄<span>ПРОКРУТИТЕ ВНИЗ</span></div>
+  </div>
+</section>
+
+<section class="cases" id="cases">
+  <header class="section-title">
+    <div class="eyebrow">• МАТЕРИАЛЫ ДЕЛА •</div>
+    <h2>ВЫБЕРИТЕ<br>СЛЕДУЮЩЕЕ ДЕЛО</h2>
+    <p>Каждое дело — это повод провести время вместе.</p>
+  </header>
+  <div class="case-list"><article class="case-card">
+  <img src="assets/case-01.jpg" alt="Велосипедное приключение">
+  <div class="case-body">
+    <div class="case-number">ДЕЛО №01</div>
+    <h3>Велосипедное приключение</h3>
+    <p>Маршрут выберем вместе. Главное — дорога, разговор и немного приключения.</p>
+    <button class="open-case" type="button" data-index="0">ВЫБРАТЬ ВРЕМЯ</button>
+  </div>
+</article>
+<article class="case-card">
+  <img src="assets/case-02.jpg" alt="Кофе и разговор">
+  <div class="case-body">
+    <div class="case-number">ДЕЛО №02</div>
+    <h3>Кофе и разговор</h3>
+    <p>Без спешки и лишнего шума. Просто хороший кофе и время поговорить.</p>
+    <button class="open-case" type="button" data-index="1">ВЫБРАТЬ ВРЕМЯ</button>
+  </div>
+</article>
+<article class="case-card">
+  <img src="assets/case-03.jpg" alt="Вечер настольных игр">
+  <div class="case-body">
+    <div class="case-number">ДЕЛО №03</div>
+    <h3>Вечер настольных игр</h3>
+    <p>Стратегия, смех и азарт. Победит дружба. Или нет?</p>
+    <button class="open-case" type="button" data-index="2">ВЫБРАТЬ ВРЕМЯ</button>
+  </div>
+</article>
+<article class="case-card">
+  <img src="assets/case-04.jpg" alt="Прогулка без маршрута">
+  <div class="case-body">
+    <div class="case-number">ДЕЛО №04</div>
+    <h3>Прогулка без маршрута</h3>
+    <p>Улицы, истории и случайные находки. Идём туда, куда захочется.</p>
+    <button class="open-case" type="button" data-index="3">ВЫБРАТЬ ВРЕМЯ</button>
+  </div>
+</article>
+<article class="case-card">
+  <img src="assets/case-05.jpg" alt="Киновечер">
+  <div class="case-body">
+    <div class="case-number">ДЕЛО №05</div>
+    <h3>Киновечер</h3>
+    <p>Выберем фильм, что-нибудь вкусное и устроим спокойный вечер.</p>
+    <button class="open-case" type="button" data-index="4">ВЫБРАТЬ ВРЕМЯ</button>
+  </div>
+</article>
+<article class="case-card">
+  <img src="assets/case-06.jpg" alt="Приготовим вместе">
+  <div class="case-body">
+    <div class="case-number">ДЕЛО №06</div>
+    <h3>Приготовим вместе</h3>
+    <p>Выберем блюдо, включим музыку и приготовим его вместе.</p>
+    <button class="open-case" type="button" data-index="5">ВЫБРАТЬ ВРЕМЯ</button>
+  </div>
+</article></div>
+</section>
+
+<section class="screen finale" id="finale">
+  <div class="screen-bg"></div>
+  <div class="screen-shade"></div>
+  <div class="final-content">
+    <div class="tag">ДЕЛО №41-А</div>
+    <div class="eyebrow">• ЗАКЛЮЧЕНИЕ СЛЕДСТВИЯ •</div>
+    <h2>Главная улика была перед вами с самого начала.</h2>
+    <div class="not-these">
+      <span>Не велосипед</span><span>Не кофе</span>
+      <span>Не настольная игра</span><span>Не фильм</span>
+    </div>
+    <div class="paper">
+      <div class="paper-label">НАСТОЯЩИЙ ПОДАРОК</div>
+      <div class="attention">ВНИМАНИЕ</div>
+      <p>В мире, где всем постоянно не хватает времени, внимание становится одним из самых ценных подарков.</p>
+      <p>Поэтому ваша награда за раскрытое дело — немного моего времени, предназначенного именно для вас.</p>
+    </div>
+    <div class="stamp">РАСКРЫТО</div>
+    <p class="thanks">Спасибо, что стали частью этого расследования.</p>
+    <button class="primary" id="backToCases" type="button">ОТКРЫТЬ ДРУГОЕ ДЕЛО</button>
+  </div>
+</section>
+</main>
+
+<div class="modal" id="caseModal" aria-hidden="true">
+  <div class="modal-card">
+    <button class="modal-close" id="modalClose" type="button" aria-label="Закрыть">×</button>
+    <div class="modal-number" id="modalNumber"></div>
+    <h2 id="modalTitle"></h2>
+    <img id="modalImage" alt="">
+    <p id="modalDesc"></p>
+    <div class="choose-label">ВЫБРАТЬ ВРЕМЯ</div>
+    <div class="time-grid" id="timeGrid"></div>
+    <a class="telegram-direct" href="https://t.me/vshooroop" target="_blank" rel="noopener">✈ Написать в Telegram</a>
+  </div>
+</div>
+
+<script src="script.js"></script>
+</body>
+</html>

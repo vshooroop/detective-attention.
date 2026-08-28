@@ -1,0 +1,1 @@
+Clean rebuild from scratch. Upload the whole contents, preserving the assets folder.
