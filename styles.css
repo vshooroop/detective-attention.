@@ -17,11 +17,11 @@ main{width:100%}
   overflow:hidden;
   isolation:isolate;
 }
-.hero{background-image:url("assets/hero-bg.png")}
-.finale{background-image:url("assets/final-bg.jpg")}
+.hero{background-image:url("hero-bg.png")}
+.finale{background-image:url("final-bg.jpg")}
 .shade{
   position:absolute;inset:0;z-index:-1;
-  background:linear-gradient(to bottom,rgba(56,30,8,.08),rgba(56,30,8,.05) 65%,rgba(18,9,2,.25));
+  background:linear-gradient(to bottom,rgba(56,30,8,.02),rgba(56,30,8,.03) 65%,rgba(18,9,2,.14));
 }
 .finale-shade{background:linear-gradient(to bottom,rgba(52,23,4,.08),rgba(39,17,3,.12) 60%,rgba(12,5,1,.32))}
 .case-content{
