@@ -1,175 +1,126 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="ru">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta name="theme-color" content="#17120d" />
-  <title>Дело раскрыто — Внимание</title>
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600;700&family=Special+Elite&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="styles.css" />
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+  <title>Дело №41-А — Внимание</title>
+  <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-  <div class="grain"></div>
-
-  <header class="hero" id="top">
-    <div class="desk-light"></div>
-
-    <div class="case-meta">
-      <span>ЛИЧНОЕ ДЕЛО</span>
-      <span>№ 41-A</span>
-    </div>
-
-    <section class="case-file hero-file">
-      <div class="paperclip"></div>
-      <p class="eyebrow">ФИНАЛ РАССЛЕДОВАНИЯ</p>
-      <h1>ДЕЛО РАСКРЫТО</h1>
-      <p class="lead">Вы нашли правильный ответ.</p>
-
-      <div class="redaction-wrap" id="redactionWrap">
-        <div class="answer">ВНИМАНИЕ</div>
-        <button class="redaction" id="revealBtn" aria-label="Открыть материалы дела">
-          <span>СЕКРЕТНО</span>
-        </button>
-      </div>
-
-      <p class="after-reveal" id="afterReveal">Но это было не просто слово.</p>
-
-      <button class="primary-btn" id="openCaseBtn">
-        Открыть материалы дела
-      </button>
-
-      <div class="stamp">РАСКРЫТО</div>
-    </section>
-
-    <div class="scroll-hint">листайте материалы дела ↓</div>
-  </header>
-
+  <audio id="bgMusic" src="assets/detective-history-2.mp3" loop preload="auto"></audio>
+  <audio id="clockTick" src="assets/clock-tick.wav" loop preload="auto"></audio>
+  <button id="soundToggle" class="sound-toggle" aria-pressed="false" aria-label="Включить звук">
+    <span class="sound-icon">🔇</span>
+    <span class="sound-text">ЗВУК</span>
+  </button>
   <main>
-    <section class="section intro" id="meaning">
-      <div class="case-file note-file">
-        <div class="pin"></div>
-        <p class="typewriter">
-          В мире, где всем постоянно не хватает времени, внимание становится одним из самых ценных подарков.
-        </p>
-        <p>
-          Поэтому ваша награда за раскрытое дело — немного моего времени, предназначенного именно для вас.
-        </p>
-        <div class="coffee-ring"></div>
+    <section class="case-screen hero" id="top">
+      <div class="shade"></div>
+      <div class="case-content hero-content">
+        <div class="eyebrow">• ФИНАЛ РАССЛЕДОВАНИЯ •</div>
+        <h1>ДЕЛО<br>РАСКРЫТО</h1>
+        <div class="ornament">◆ ───── ◆</div>
+        <p class="lead">Вы нашли правильный ответ.</p>
+
+        <button class="secret" id="secret" aria-expanded="false">
+          <span class="secret-label">С Е К Р Е Т Н О</span>
+          <span class="secret-word">В Н И М А Н И Е</span>
+        </button>
+
+        <button class="primary" id="openCase">⌕ &nbsp; ОТКРЫТЬ МАТЕРИАЛЫ ДЕЛА</button>
+
+        <aside class="note">
+          <strong>Дело №41-А</strong>
+          <p>Каждая улика вела к одному.<br>
+          Не предмет. Не действие.<br>
+          А то, чего так не хватает без внимания.</p>
+        </aside>
+
+        <div class="scroll-hint">⌄<br><span>ПРОКРУТИТЕ ВНИЗ</span></div>
       </div>
     </section>
 
-    <section class="section activities" id="activities">
-      <div class="section-heading">
-        <span class="eyebrow">МАТЕРИАЛЫ ДЕЛА</span>
-        <h2>Выберите своё дело</h2>
-        <p>Нажмите на улику, чтобы открыть подробности.</p>
-      </div>
 
-      <div class="evidence-grid">
-        <article class="evidence-card" tabindex="0">
-          <div class="evidence-number">УЛИКА 01</div>
-          <div class="icon">🚲</div>
-          <h3>Велосипедное приключение</h3>
-          <p class="summary">Маршрут без спешки и немного дороги только для нас.</p>
-          <div class="details">
-            Совместная поездка на велосипеде. Маршрут выберем вместе — лёгкий, красивый или с небольшим приключением.
-          </div>
-          <button class="choice-btn">Выбрать это дело</button>
-        </article>
+    <section class="case-list" id="cases">
+      <div class="case-list-inner">
+        <div class="eyebrow">• МАТЕРИАЛЫ ДЕЛА •</div>
+        <h2 class="cases-title">ВЫБЕРИТЕ СЛЕДУЮЩЕЕ ДЕЛО</h2>
+        <p class="cases-intro">Каждое дело — это повод провести время вместе.</p>
 
-        <article class="evidence-card" tabindex="0">
-          <div class="evidence-number">УЛИКА 02</div>
-          <div class="icon">☕</div>
-          <h3>Кофе и разговор</h3>
-          <p class="summary">Прогулка, чашка кофе и разговор без суеты.</p>
-          <div class="details">
-            Найдём уютное место, прогуляемся и просто поговорим — без расписания, телефонов и спешки.
-          </div>
-          <button class="choice-btn">Выбрать это дело</button>
-        </article>
+        <div class="cases-grid">
+          <article class="case-card">
+            <div class="case-number">ДЕЛО №01</div>
+            <h3>🚲 Велосипедное приключение</h3>
+            <p>Маршрут выберем вместе. Главное — дорога, разговор и немного приключения.</p>
+            <a class="time-btn" href="https://t.me/vshooroop?text=%D0%9F%D1%80%D0%B8%D0%B2%D0%B5%D1%82%21%20%D0%AF%20%D0%B2%D1%8B%D0%B1%D0%B8%D1%80%D0%B0%D1%8E%20%D0%B4%D0%B5%D0%BB%D0%BE%20%E2%84%9601%20%E2%80%94%20%D0%92%D0%B5%D0%BB%D0%BE%D1%81%D0%B8%D0%BF%D0%B5%D0%B4%D0%BD%D0%BE%D0%B5%20%D0%BF%D1%80%D0%B8%D0%BA%D0%BB%D1%8E%D1%87%D0%B5%D0%BD%D0%B8%D0%B5%20%F0%9F%9A%B2.%20%D0%94%D0%B0%D0%B2%D0%B0%D0%B9%20%D0%B2%D1%8B%D0%B1%D0%B5%D1%80%D0%B5%D0%BC%20%D0%B2%D1%80%D0%B5%D0%BC%D1%8F." target="_blank" rel="noopener">ВЫБРАТЬ ВРЕМЯ</a>
+          </article>
 
-        <article class="evidence-card" tabindex="0">
-          <div class="evidence-number">УЛИКА 03</div>
-          <div class="icon">🎲</div>
-          <h3>Вечер настольных игр</h3>
-          <p class="summary">Немного азарта, юмора и хорошей компании.</p>
-          <div class="details">
-            Выберем любимую настольную игру, подготовим закуски и устроим вечер, где главное — не победа.
-          </div>
-          <button class="choice-btn">Выбрать это дело</button>
-        </article>
+          <article class="case-card">
+            <div class="case-number">ДЕЛО №02</div>
+            <h3>☕ Кофе и разговор</h3>
+            <p>Без спешки и лишнего шума. Просто хороший кофе и время поговорить.</p>
+            <a class="time-btn" href="https://t.me/vshooroop?text=%D0%9F%D1%80%D0%B8%D0%B2%D0%B5%D1%82%21%20%D0%AF%20%D0%B2%D1%8B%D0%B1%D0%B8%D1%80%D0%B0%D1%8E%20%D0%B4%D0%B5%D0%BB%D0%BE%20%E2%84%9602%20%E2%80%94%20%D0%9A%D0%BE%D1%84%D0%B5%20%D0%B8%20%D1%80%D0%B0%D0%B7%D0%B3%D0%BE%D0%B2%D0%BE%D1%80%20%E2%98%95.%20%D0%94%D0%B0%D0%B2%D0%B0%D0%B9%20%D0%B2%D1%8B%D0%B1%D0%B5%D1%80%D0%B5%D0%BC%20%D0%B2%D1%80%D0%B5%D0%BC%D1%8F." target="_blank" rel="noopener">ВЫБРАТЬ ВРЕМЯ</a>
+          </article>
 
-        <article class="evidence-card" tabindex="0">
-          <div class="evidence-number">УЛИКА 04</div>
-          <div class="icon">🚶</div>
-          <h3>Прогулка без маршрута</h3>
-          <p class="summary">Иногда лучший план — не иметь плана.</p>
-          <div class="details">
-            Просто выберем направление и пойдём. Можно говорить обо всём или даже немного помолчать.
-          </div>
-          <button class="choice-btn">Выбрать это дело</button>
-        </article>
+          <article class="case-card">
+            <div class="case-number">ДЕЛО №03</div>
+            <h3>🎲 Вечер настольных игр</h3>
+            <p>Немного стратегии, немного хаоса и много поводов посмеяться.</p>
+            <a class="time-btn" href="https://t.me/vshooroop?text=%D0%9F%D1%80%D0%B8%D0%B2%D0%B5%D1%82%21%20%D0%AF%20%D0%B2%D1%8B%D0%B1%D0%B8%D1%80%D0%B0%D1%8E%20%D0%B4%D0%B5%D0%BB%D0%BE%20%E2%84%9603%20%E2%80%94%20%D0%92%D0%B5%D1%87%D0%B5%D1%80%20%D0%BD%D0%B0%D1%81%D1%82%D0%BE%D0%BB%D1%8C%D0%BD%D1%8B%D1%85%20%D0%B8%D0%B3%D1%80%20%F0%9F%8E%B2.%20%D0%94%D0%B0%D0%B2%D0%B0%D0%B9%20%D0%B2%D1%8B%D0%B1%D0%B5%D1%80%D0%B5%D0%BC%20%D0%B2%D1%80%D0%B5%D0%BC%D1%8F." target="_blank" rel="noopener">ВЫБРАТЬ ВРЕМЯ</a>
+          </article>
 
-        <article class="evidence-card" tabindex="0">
-          <div class="evidence-number">УЛИКА 05</div>
-          <div class="icon">🎬</div>
-          <h3>Киновечер</h3>
-          <p class="summary">Хороший фильм, что-нибудь вкусное и никакой спешки.</p>
-          <div class="details">
-            Вместе выберем фильм, закажем или приготовим что-нибудь вкусное и устроим домашний киносеанс.
-          </div>
-          <button class="choice-btn">Выбрать это дело</button>
-        </article>
+          <article class="case-card">
+            <div class="case-number">ДЕЛО №04</div>
+            <h3>🚶 Прогулка без маршрута</h3>
+            <p>Пойдём куда захочется и позволим разговору самому выбрать направление.</p>
+            <a class="time-btn" href="https://t.me/vshooroop?text=%D0%9F%D1%80%D0%B8%D0%B2%D0%B5%D1%82%21%20%D0%AF%20%D0%B2%D1%8B%D0%B1%D0%B8%D1%80%D0%B0%D1%8E%20%D0%B4%D0%B5%D0%BB%D0%BE%20%E2%84%9604%20%E2%80%94%20%D0%9F%D1%80%D0%BE%D0%B3%D1%83%D0%BB%D0%BA%D0%B0%20%D0%B1%D0%B5%D0%B7%20%D0%BC%D0%B0%D1%80%D1%88%D1%80%D1%83%D1%82%D0%B0%20%F0%9F%9A%B6.%20%D0%94%D0%B0%D0%B2%D0%B0%D0%B9%20%D0%B2%D1%8B%D0%B1%D0%B5%D1%80%D0%B5%D0%BC%20%D0%B2%D1%80%D0%B5%D0%BC%D1%8F." target="_blank" rel="noopener">ВЫБРАТЬ ВРЕМЯ</a>
+          </article>
 
-        <article class="evidence-card" tabindex="0">
-          <div class="evidence-number">УЛИКА 06</div>
-          <div class="icon">🍳</div>
-          <h3>Приготовим что-нибудь вместе</h3>
-          <p class="summary">Обычный ужин легко превратить в маленькое событие.</p>
-          <div class="details">
-            Выберем блюдо, вместе купим продукты и приготовим его от начала до конца.
-          </div>
-          <button class="choice-btn">Выбрать это дело</button>
-        </article>
+          <article class="case-card">
+            <div class="case-number">ДЕЛО №05</div>
+            <h3>🎬 Киновечер</h3>
+            <p>Выберем фильм, что-нибудь вкусное и устроим спокойный вечер.</p>
+            <a class="time-btn" href="https://t.me/vshooroop?text=%D0%9F%D1%80%D0%B8%D0%B2%D0%B5%D1%82%21%20%D0%AF%20%D0%B2%D1%8B%D0%B1%D0%B8%D1%80%D0%B0%D1%8E%20%D0%B4%D0%B5%D0%BB%D0%BE%20%E2%84%9605%20%E2%80%94%20%D0%9A%D0%B8%D0%BD%D0%BE%D0%B2%D0%B5%D1%87%D0%B5%D1%80%20%F0%9F%8E%AC.%20%D0%94%D0%B0%D0%B2%D0%B0%D0%B9%20%D0%B2%D1%8B%D0%B1%D0%B5%D1%80%D0%B5%D0%BC%20%D0%B2%D1%80%D0%B5%D0%BC%D1%8F." target="_blank" rel="noopener">ВЫБРАТЬ ВРЕМЯ</a>
+          </article>
+
+          <article class="case-card">
+            <div class="case-number">ДЕЛО №06</div>
+            <h3>🍳 Приготовим что-нибудь вместе</h3>
+            <p>Выберем блюдо, включим музыку и приготовим его без лишней спешки.</p>
+            <a class="time-btn" href="https://t.me/vshooroop?text=%D0%9F%D1%80%D0%B8%D0%B2%D0%B5%D1%82%21%20%D0%AF%20%D0%B2%D1%8B%D0%B1%D0%B8%D1%80%D0%B0%D1%8E%20%D0%B4%D0%B5%D0%BB%D0%BE%20%E2%84%9606%20%E2%80%94%20%D0%9F%D1%80%D0%B8%D0%B3%D0%BE%D1%82%D0%BE%D0%B2%D0%B8%D0%BC%20%D1%87%D1%82%D0%BE-%D0%BD%D0%B8%D0%B1%D1%83%D0%B4%D1%8C%20%D0%B2%D0%BC%D0%B5%D1%81%D1%82%D0%B5%20%F0%9F%8D%B3.%20%D0%94%D0%B0%D0%B2%D0%B0%D0%B9%20%D0%B2%D1%8B%D0%B1%D0%B5%D1%80%D0%B5%D0%BC%20%D0%B2%D1%80%D0%B5%D0%BC%D1%8F." target="_blank" rel="noopener">ВЫБРАТЬ ВРЕМЯ</a>
+          </article>
+        </div>
       </div>
     </section>
 
-    <section class="section finale">
-      <div class="case-file final-file">
-        <div class="magnifier">⌕</div>
-        <p class="eyebrow">ЗАКЛЮЧЕНИЕ СЛЕДСТВИЯ</p>
-        <h2>Главная улика была перед вами с самого начала.</h2>
+    <section class="case-screen finale" id="finale">
+      <div class="shade finale-shade"></div>
+      <div class="case-content finale-content">
+        <div class="eyebrow">• ЗАКЛЮЧЕНИЕ СЛЕДСТВИЯ •</div>
+        <h2>Главная улика была перед вами<br>с самого начала.</h2>
+        <div class="ornament">◆ ───── ◆</div>
 
-        <div class="final-lines">
-          <p>Не кофе.</p>
-          <p>Не велосипед.</p>
-          <p>Не настольная игра.</p>
-          <p class="final-highlight">Всё это только повод.</p>
+        <div class="false-leads">
+          <div><span>🚲</span><small>НЕ ВЕЛОСИПЕД</small><b>×</b></div>
+          <div><span>☕</span><small>НЕ КОФЕ</small><b>×</b></div>
+          <div><span>🎲</span><small>НЕ НАСТОЛЬНАЯ ИГРА</small><b>×</b></div>
+          <div><span>🎬</span><small>НЕ ФИЛЬМ</small><b>×</b></div>
         </div>
 
-        <div class="attention-card">
-          <span>НАСТОЯЩИЙ ПОДАРОК</span>
-          <strong>ВНИМАНИЕ</strong>
-        </div>
+        <div class="gift-label">• НАСТОЯЩИЙ ПОДАРОК •</div>
+        <div class="attention">ВНИМАНИЕ</div>
 
-        <p class="thanks">Спасибо, что стали частью этого расследования.</p>
+        <p class="thanks">Спасибо, что стали частью<br>этого расследования.</p>
 
-        <a class="secondary-btn" href="#activities">Вернуться к уликам</a>
+        <div class="stamp">РАСКРЫТО</div>
+
+        <button class="primary" onclick="location.href='#top'">⌂ &nbsp; ВЕРНУТЬСЯ В НАЧАЛО</button>
+        <button class="secondary" id="shareBtn">⌯ &nbsp; РАССКАЗАТЬ ДРУЗЬЯМ</button>
+
+        <p class="epilogue">Дело закрыто.<br>Но история на этом не заканчивается.</p>
       </div>
     </section>
   </main>
-
-  <div class="toast" id="toast">
-    <strong>Дело отмечено.</strong>
-    <span>Теперь осталось договориться о времени.</span>
-  </div>
-
-  <footer>
-    <span>АРХИВ ЗАКРЫТ • ДЕЛО № 41-A</span>
-  </footer>
-
   <script src="script.js"></script>
 </body>
 </html>
